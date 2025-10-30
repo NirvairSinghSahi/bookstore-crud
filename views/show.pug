@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= book.title
+  body
+    h1= book.title
+    p Author: #{book.author}
+    p Pages: #{book.pages}
+    p Rating: #{book.rating}
+    a(href=`/books/${book._id}/edit`) Edit
+    form(action=`/books/${book._id}?_method=DELETE` method="POST")
+      button(type="submit") Delete
+    a(href="/books") Back

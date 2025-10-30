@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Edit Book
+  body
+    h1 Edit #{book.title}
+    form(action=`/books/${book._id}?_method=PUT` method="POST")
+      label Title:
+      input(type="text" name="title" value=book.title required)
+      br
+      label Author:
+      input(type="text" name="author" value=book.author required)
+      br
+      label Pages:
+      input(type="number" name="pages" value=book.pages required)
+      br
+      label Rating:
+      input(type="number" name="rating" value=book.rating min="0" max="5" required)
+      br
+      button(type="submit") Update
+    a(href="/books") Back

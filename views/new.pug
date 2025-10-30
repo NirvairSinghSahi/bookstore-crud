@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Add Book
+  body
+    h1 Add a New Book
+    form(action="/books" method="POST")
+      label Title:
+      input(type="text" name="title" required)
+      br
+      label Author:
+      input(type="text" name="author" required)
+      br
+      label Pages:
+      input(type="number" name="pages" required)
+      br
+      label Rating:
+      input(type="number" name="rating" min="0" max="5" required)
+      br
+      button(type="submit") Save
+    a(href="/books") Back

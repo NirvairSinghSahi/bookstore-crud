@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Bookstore
+  body
+    h1 All Books
+    a(href="/books/new") Add New Book
+    ul
+      each book in books
+        li
+          a(href=`/books/${book._id}`) #{book.title} by #{book.author}
